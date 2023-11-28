@@ -27,9 +27,7 @@ public class Main1 {
 
     public static void main(String[] args) {
         List<Student> studentList = createStudentData();
-        PrintStream var10001 = System.out;
-        Objects.requireNonNull(var10001);
-        studentList.forEach(var10001::println);
+        studentList.forEach(System.out::println);
         Year year = Year.Y23;
         Map<String, List<Student>> groupByStand = studentList.stream().collect(Collectors.groupingBy(Student::getStandard));
         Map<String, List<Student>> filterResultBasedByYear = groupByStand.entrySet().stream().map((x1) -> {

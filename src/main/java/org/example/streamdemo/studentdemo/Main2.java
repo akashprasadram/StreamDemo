@@ -26,9 +26,7 @@ public class Main2 {
 
     public static void main(String[] args) {
         List<Student> studentList = createStudentData();
-        PrintStream var10001 = System.out;
-        Objects.requireNonNull(var10001);
-        studentList.forEach(var10001::println);
+        studentList.forEach(System.out::println);
         System.out.println("======================================");
         Year year = Year.Y23;
         Map<String, List<Student>> groupByStand = studentList.stream().collect(Collectors.groupingBy(Student::getStandard));
@@ -45,7 +43,7 @@ public class Main2 {
         filterResultBasedByYear.forEach((key, value) -> {
             System.out.println("=======================================");
             System.out.println("Standard=" + key);
-            value.forEach(var10001::println);
+            value.forEach(System.out::println);
         });
         Map<String, Map<MarksSumDto, List<StudentDto>>> standardWiseMap = new HashMap<>();
         filterResultBasedByYear.forEach((key, value) -> {
@@ -54,7 +52,7 @@ public class Main2 {
             groupingByDept.forEach((key1, value1) -> {
                 System.out.println("Department= " + key1);
                 System.out.println("Students= " + value1);
-                value1.forEach(var10001::println);
+                value1.forEach(System.out::println);
                 System.out.println("");
             });
             Map<MarksSumDto, List<StudentDto>> map1 = new HashMap<>();
